@@ -25,9 +25,9 @@ export default {
   },
   data() {
     return {
-      hst: '',
-      utc: '',
-      jst: ''
+      hst: 'loading...',
+      utc: 'loading...',
+      jst: 'loading...'
     }
   },
   mounted() {
@@ -35,6 +35,11 @@ export default {
   },
   methods: {
     init() {
+      setInterval(() => {
+        this.hst = new Date().toLocaleString('ja-JP', { timeZone: 'Pacific/Honolulu', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
+        this.utc = new Date().toLocaleString('ja-JP', { timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
+        this.jst = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
+      }, 1000)
     }
   }
 }
