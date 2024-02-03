@@ -3,17 +3,17 @@
     <p>
       <small>HST / UTC-1000</small>
       <br>
-      00:00:00
+      {{ hst }}
     </p>
     <p>
       <small>UTC / UTC+1000</small>
       <br>
-      00:00:00
+      {{ utc }}
     </p>
     <p>
       <small>JST / UTC+0900</small>
       <br>
-      00:00:00
+      {{ jst }}
     </p>
   </div>
 </template>
@@ -22,6 +22,20 @@
 export default {
   name: 'App',
   components: {
+  },
+  data() {
+    return {
+      hst: '',
+      utc: '',
+      jst: ''
+    }
+  },
+  mounted() {
+    this.init()
+  },
+  methods: {
+    init() {
+    }
   }
 }
 </script>
