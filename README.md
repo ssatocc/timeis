@@ -23,3 +23,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Get screenshot
+
+```bash
+node run.js
+```
